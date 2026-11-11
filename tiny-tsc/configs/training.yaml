@@ -1,0 +1,53 @@
+defaults:
+  max_epochs: 10
+  early_stopping: false
+  patience: 15
+  batch_size: 128
+  accumulate: 1
+  learning_rate: 0.001
+  clip_norm: 1.0
+  weight_decay: 0.01
+  scheduler: none
+  precision: bf16-mixed
+models:
+  perceiver:
+    max_epochs: 100
+    early_stopping: true
+    batch_size: 32
+    accumulate: 4
+    learning_rate: 0.0002
+    scheduler: cosine
+    precision: float32
+  mtan_vae:
+    max_epochs: 100
+    early_stopping: true
+    batch_size: 16
+    accumulate: 8
+    learning_rate: 0.0001
+    weight_decay: 0.0
+    precision: float32
+  mamba:
+    max_epochs: 100
+    early_stopping: true
+    batch_size: 8
+    accumulate: 32
+    learning_rate: 0.0005
+    scheduler: cosine
+    precision: float32
+  neural_cde:
+    max_epochs: 100
+    early_stopping: true
+    batch_size: 64
+    accumulate: 4
+    learning_rate: 0.0005
+    scheduler: cosine
+    precision: float32
+  ode_rnn:
+    batch_size: 16
+    accumulate: 8
+    precision: float32
+  micro_diet_gru:
+    batch_size: 32
+    accumulate: 4
+    scheduler: cosine
+    precision: float32

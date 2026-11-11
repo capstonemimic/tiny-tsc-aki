@@ -1,0 +1,5 @@
+window_hours: 24
+channels: 33
+grid_points: 128
+group_column: subject_id
+n_folds: 5

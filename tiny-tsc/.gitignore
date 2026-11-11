@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+/tests/
+data/
+outputs/
+checkpoints/
+lightning_logs/
+*.parquet
+*.safetensors
+*.pt
+*.pth
+*.ckpt

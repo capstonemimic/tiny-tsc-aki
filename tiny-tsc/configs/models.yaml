@@ -1,0 +1,75 @@
+perceiver:
+  d_input: 33
+  d_model: 128
+  max_freq_scale: 10.0
+  n_latents: 32
+  n_self_attn_layers: 6
+  n_heads: 8
+  d_ffn: 512
+  d_out: 2
+  dropout: 0.1
+  drop_path_rate: 0.1
+  label_smoothing: 0.05
+  focal_gamma: 2.0
+  class_weights:
+  - 0.35
+  - 0.65
+  weight_decay: 0.01
+mtan_vae:
+  d_input: 33
+  d_out: 2
+  d_latent: 128
+  n_hidden: 256
+  n_hidden_dec: 50
+  embed_time: 128
+  n_heads: 1
+  learn_embeddings: true
+  k_iwae: 1
+  kl_anneal: false
+  kl_anneal_wait: 10
+  kl_anneal_rate: 0.99
+  sample_tp: 1.0
+  n_division: 128
+  alpha: 5.0
+  norm: true
+  noise_std: 0.01
+mamba:
+  d_input: 33
+  d_model: 128
+  d_state: 16
+  d_conv: 4
+  expand_factor: 2
+  n_layers: 4
+  d_classifier_ffn: 128
+  d_out: 2
+  dropout: 0.2
+  max_freq_scale: 10.0
+  focal_gamma: 2.0
+  label_smoothing: 0.05
+  class_weights:
+  - 0.35
+  - 0.65
+  weight_decay: 0.01
+  dt_min: 0.001
+  dt_max: 0.01
+  dt_init_std: 0.1
+neural_cde:
+  d_input: 33
+  d_hidden: 96
+  d_cde_hidden: 96
+  n_cde_layers: 2
+  d_classifier_ffn: 96
+  d_out: 2
+  dropout: 0.2
+  max_freq_scale: 10.0
+  use_initial_network: true
+  focal_gamma: 2.0
+  label_smoothing: 0.05
+  class_weights:
+  - 0.35
+  - 0.65
+  weight_decay: 0.01
+  interpolation: linear
+  solver: rk4
+  step_size: 1.0
+  adjoint: false
